@@ -32,38 +32,30 @@ def Murari():
 
 @app.route('/average',methods=['GET','POST'])
 def Average():
-    rest = 0.0
+
 
     if request.method=='GET':
-        return render_template('average.html',value='Average',title='Average')
+        return render_template('average.html',value='Average',title='Average',result="")
     elif request.method=='POST':
         first = request.form['first']
         temp=first
-        first=list(first)
-        l=[]
-        for i in range(len(first)):
-            if(first[i]=='('):
-                pass
-            elif(first[i]==')'):
-                pass
-            elif(first[i]==','):
-                pass
 
-            elif(first[i]=='-'):
-                l.append(float('-'+first[i+1]))
-                i=i+1
-            else:
-                if(first[i-1]=='-'):
-                    pass
-                else:
-                    l.append(float(first[i]))
+        s=first[:]+','
+        first=[]
+        while(s!=''):
+            i=s.index(',')
+            first.append(float(s[:i]))
+            s=s[i+1:]
+
+        sum=0
+        for item in first:
+            sum=sum+item
+            rest=float(sum)/len(first)
 
 
-        if len(l)==0:
-            return '<h1>Can not divided By Zero</h1>'
 
 
-        rest=(sum(l)/(len(l)))
+
 
         return render_template('average2.html',value='Average',title='Average',result=rest,oldvalue=temp)
     else:
@@ -84,36 +76,14 @@ def Interpolation():
 
 @app.route('/plot/<points>')
 def plot(points):
-    points=list(points)
-    l=[]
-    for i in range(len(points)):
-        if(points[i]=='('):
-
-             pass
-        elif(points[i]==')'):
-             pass
-        elif(points[i]==','):
-             pass
-
-        elif(points[i]=='-'):
-            l.append(float('-'+points[i+1]))
-            i=i+1
-        else:
-            if(points[i-1]=='-'):
-                pass
-            else:
-                l.append(float(points[i]))
-
-    points=l;
-
-    X=[]
-    F=[]
-
-    for i in range(len(points)):
-        if i%2==0:
-            X.append(points[i])
-        else:
-            F.append(points[i])
+    s,X,F=points[:],[],[]
+    while(s!=''):
+        i=s.index('(')
+        j=s.index(',',i)
+        X.append(float(s[i+1:j]))
+        k=s.index(')',j)
+        F.append(float(s[j+1:k]))
+        s=s[k+2:]
     fig=plt.figure()
     plt.clf()
     sub=fig.add_subplot(111)
@@ -132,7 +102,7 @@ def plot(points):
         sub.plot(X1,Y)
 
     Y=P.polyval(X1,b)
-    Y1=P.polyval(np.arange(min(X),max(X),0.1),b)
+    Y1=P.polyval(np.arange(min(X),max(X)+0.1,0.1),b)
     interpol_obj=sub.plot(X1,Y,'k',linewidth=2)
     #sub.fill_between( X1, Y ,alpha=0.5)
     sub.plot(X,F,'ro',markersize=6)
@@ -148,7 +118,7 @@ def plot(points):
     output = io.BytesIO()
     canvas.print_png(output)
     response = make_response(output.getvalue())
-    response.mimetype = 'image/png'
+
 
     return response
 
