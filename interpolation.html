@@ -1,0 +1,20 @@
+{% extends "home.html" %}
+{% block content %}
+    <label><h2 style="font-size: 40px;padding-left: 30px" > Coordinates</h2></label>
+    <form method="POST" style="padding-left: 30px">
+    <div>
+
+        <input type="text" name="points" style="font-size: 40px;border-radius: 10px">
+
+    </div>
+<br>
+    <div>
+         <input type="submit" value="Plot"style="font-size: 40px;color:cornflowerblue;border-radius: 10px">
+    </div>
+    </form>
+    <div>
+        <h2 style="font-size: 40px;padding-left: 30px">Enter the coordinates and see the interpolating curve HERE</h2>
+    </div>
+
+
+{% endblock %}
