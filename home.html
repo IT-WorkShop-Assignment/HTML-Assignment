@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <link rel="stylesheet" type="text/css" href="/static/home.css">
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<header>
+    <ul style="text-align: right">
+        <li style="float:right"><a href="http://www.facebook.com"><img src="/static/sd.png" alt="facebook" width="30px" height="30px" /></a>
+        <li style="float:right"><a href="http://www.gmail.com"><img src="/static/34.png" alt="google+" width="30px" height="30px" /></a>
+        <li style="float:right"><a href="http://www.twitter.com"><img src="/static/cv.png" alt="twitter" width="30px" height="30px" /></a>
+    </ul>
+    <h2> {{value}} </h2>
+
+    <ul>
+        <li style="float:left"><a href="/home" style="text-decoration: none">Home</a></li>
+        <li style="float:left"><a href="/biodata" style="text-decoration: none">Biodata</a></li>
+        <li style="float:left"><a href="/average" style="text-decoration: none">Average</a></li>
+        <li style="float:left"><a href="/interpolation" style="text-decoration: none">Interpolation</a></li>
+
+    </ul>
+
+
+
+
+</header>
+{% block content %}
+<table style="width:100%;font-size:20px;font-family:Bookman Old Style;padding-left:100px "  >
+<tr>
+    <td style="color:#990033">Name</td>
+
+    <td style="color:#990033">GitHubUserId</td>
+  </tr>
+  <tr>
+    <td>Amit Kumar</td>
+    <td></td>
+
+  </tr>
+    <td>Aman Gupta</td>
+    <td>aman696442</td>
+  <tr>
+    <td>Murari</td>
+    <td></td>
+  </tr>
+    </table>
+{% endblock %}
+
+
+
+</body>
+</html>
