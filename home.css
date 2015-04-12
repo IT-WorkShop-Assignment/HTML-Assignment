@@ -1,0 +1,81 @@
+body{
+	background-color: #6d695c;
+background-image:
+repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+background-size: 70px 120px;
+}
+header {
+	background: #333333;
+	border-bottom: double 1px #aba;
+	border-left: solid 1px #9a9;
+	border-right: solid 1px #9a9;
+	border-top: solid 1px #9a9;
+	font: italic normal 230% 'Times New Roman', Times, serif;
+	letter-spacing: 0.2em;
+	margin:40px;
+	padding:2px 15px 2px 50px;
+	color:#A8A8A8 ;
+	border-radius: 25px;
+}
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+
+
+
+a {
+    display:block;
+    width: 250px;
+    background-color: #333333 ;
+    color:#A8A8A8;
+
+}
+
+
+a:active {
+    color: #0099FF  ;
+}
+h2 {
+    text-shadow: 2px 2px #0099FF;
+}
+aside{
+    background-color:#A8A8A8 ;
+    float:left;
+    font-family:algerian;
+    font-size:20px;
+    margin:40px;
+    margin-top:30px;
+}
+.parent { width: 420px;
+       height:700px;
+       border-width: 1px;
+       border-style:solid; 
+       border-color:#A8A8A8; 
+       background:white; 
+       float: right;
+       margin:40px;
+       margin-top:30px;
+       padding-right:350px;
+   } 
+.child { overflow : hidden;
+         background: #CCC;
+         margin:10px;
+	padding-left:20px;
+	width:720px;
+	 
+ } 
+
+  
+h1{
+        font-family:times new roman;
+	color:#990033;
+	padding-left:15px;
+}
+               
