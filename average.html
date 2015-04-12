@@ -1,0 +1,31 @@
+{% extends "home.html" %}
+{% block content %}
+   <div>
+    <h2 style="font-size: 40px;padding-left: 30px">
+
+        Enter Numbers For Average
+        </h2>
+    </div>
+<form method="POST" style="padding-left: 30px" >
+
+    <input type="text" name="first" value=""style="font-size: 40px;border-radius: 10px" ><br>
+ <br>
+
+    <input type="submit" value="Submit"style="font-size: 40px;color:cornflowerblue;border-radius: 10px">
+</form>
+    {% if result %}
+    <div>
+    <h2 style="font-size: 40px;padding-left: 30px">
+    <label name='result'><b>Answer is: {{ result }}</b></label>
+        </h2>
+        </div>
+    {% endif %}
+    {% if error %}
+    <p>
+    <label name="error">{{ error }}</label>
+    </p>
+    {% endif %}
+
+
+
+{% endblock %}
